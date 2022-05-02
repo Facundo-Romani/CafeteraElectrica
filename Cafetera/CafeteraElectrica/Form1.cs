@@ -25,6 +25,7 @@ namespace CafeteraElectrica
             if (respuesta == DialogResult.Yes)
             {
                 btnOn.Enabled = true;
+                anularCheckBox();
             }
             else
             {
@@ -50,7 +51,26 @@ namespace CafeteraElectrica
             if (rbtnCapsula.Checked)
             {
                 btnCapsulaCafe.BackColor = Color.Green;
+                desbloquearCheckBox();
             }
         }
+
+
+        //Métodos para CheckBox.
+        private void anularCheckBox()
+        {
+            checkBoxCortado.Enabled = false;
+            checkBoxCappuccino.Enabled = false;
+            checkBoxExpreso.Enabled = false;
+        }
+
+        private void desbloquearCheckBox()
+        {
+            checkBoxCortado.Enabled = true;
+            checkBoxCappuccino.Enabled = true;
+            checkBoxExpreso.Enabled = true;
+        }
+
+       
     }
 }
